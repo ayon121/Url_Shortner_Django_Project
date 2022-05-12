@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <title>URL SHORTNER</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <form id="post-form" method="POST">
+                {%csrf_token%}
+                <h1>URL SHORTNER</h1>
+                <div class="inputbox">
+                    <input type="text" name="fullurl" placeholder="TYPE YOUR URL " required="required">    
+                </div>
+
+                <div class="inputbox">
+                    <input type="submit" name="" value="SUBMIT">
+                </div>
+                <br>
+
+                <h4>Given Link</h4>
+                <p class="output-box">
+                    {{ fullurl}}
+                    <br>
+                </p>
+
+                <h4>Shorted Link</h4>
+                <p class="output-box">
+            
+                    {{shorturl}}
+                </p>
+            </form>
+        </div>
+        
+    </div>
+
+</body>
+
+</html>
